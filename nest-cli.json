@@ -1,10 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/real-estate-chatbot-projekt/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true
+    "webpack": true,
+    "tsConfigPath": "apps/real-estate-chatbot-projekt/tsconfig.app.json"
   },
   "projects": {
     "common": {
@@ -15,6 +16,26 @@
       "compilerOptions": {
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
+    },
+    "data-fetcher": {
+      "type": "application",
+      "root": "apps/data-fetcher",
+      "entryFile": "main",
+      "sourceRoot": "apps/data-fetcher/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/data-fetcher/tsconfig.app.json"
+      }
+    },
+    "real-estate-chatbot-projekt": {
+      "type": "application",
+      "root": "apps/real-estate-chatbot-projekt",
+      "entryFile": "main",
+      "sourceRoot": "apps/real-estate-chatbot-projekt/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/real-estate-chatbot-projekt/tsconfig.app.json"
+      }
     }
-  }
+  },
+  "monorepo": true,
+  "root": "apps/real-estate-chatbot-projekt"
 }
